@@ -33,9 +33,12 @@ public class LinkedList<K> {
     }
 
     public void insert(LNode<K> newNode, LNode<K> prevNode) {
-        LNode<K> tempNode = prevNode.getNext();
-        prevNode.setNext(newNode);
-        newNode.setNext(tempNode);
+        LNode<K> tempNode = head;
+        while (tempNode.getNext() != null) {
+            tempNode = prevNode.getNext();
+            prevNode.setNext(newNode);
+            newNode.setNext(tempNode);
+        }
     }
 
     public LNode<K> popHead() {
@@ -46,7 +49,7 @@ public class LinkedList<K> {
 
     public LNode<K> popTail() {
         LNode<K> tempNode = this.head;
-        while(!tempNode.getNext().equals(tail)) {
+        while (!tempNode.getNext().equals(tail)) {
             tempNode = tempNode.getNext();
         }
         this.tail = tempNode;
@@ -56,13 +59,14 @@ public class LinkedList<K> {
 
     public LNode searchList(K key) {
         LNode tempNode = head;
-        while(tempNode != null) {
-            if(tempNode.getKey().equals(key)){
-                System.out.println( "Found Successfully!!\nThe Searched Value is: " + key);
+        while (tempNode != null) {
+            if (tempNode.getKey().equals(key)) {
+                System.out.println("Found Successfully in the LinkedList!!\nThe Searched Value is: " + key);
                 return tempNode;
             }
             tempNode = tempNode.getNext();
         }
+        System.out.println("Value Not Found in the LinkedList!!");
         return null;
     }
 
