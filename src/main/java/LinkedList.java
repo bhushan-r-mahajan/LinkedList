@@ -70,6 +70,17 @@ public class LinkedList<K> {
         return null;
     }
 
+    public void remove(K key) {
+        LNode tempNode = head;
+        LNode prevNode = null;
+        while (tempNode.getKey() != key) {
+                prevNode = tempNode;
+                tempNode = tempNode.getNext();
+        }
+        tempNode = tempNode.getNext();
+        prevNode.setNext(tempNode);
+    }
+
     public void printList() {
         StringBuilder viewList = new StringBuilder("Values are: ");
         LNode<K> tempNode = head;
