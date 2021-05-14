@@ -1,17 +1,27 @@
-public class MyNode <K> {
+public class MyNode <K> implements LNode<K> {
     private K key;
-    private MyNode<K> next;
+    private LNode<K> next;
 
     public MyNode(K key) {
-        this.key = null;
+        this.key = key;
         this.next = null;
     }
 
-    public void setNext(MyNode<K> next) {
+    public void setNext(LNode<K> next) {
         this.next = next;
     }
 
-    public MyNode<K> getNext() {
+    @Override
+    public K getKey() {
+        return key;
+    }
+
+    @Override
+    public void setKey(K key) {
+        this.key = key;
+    }
+
+    public LNode<K> getNext() {
         return next;
     }
 }
