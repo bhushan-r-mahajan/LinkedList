@@ -1,4 +1,6 @@
-public class LinkedList<K> {
+@SuppressWarnings("ALL")
+
+public class LinkedList<K extends Comparable<K>> {
     public LNode<K> head;
     public LNode<K> tail;
 
@@ -79,6 +81,19 @@ public class LinkedList<K> {
         }
         tempNode = tempNode.getNext();
         prevNode.setNext(tempNode);
+    }
+
+    public int getSize()
+    {
+        LNode newNode = this.head;
+        int size = 0;
+        while (newNode != null)
+        {
+            newNode = newNode.getNext();
+            size++;
+        }
+        System.out.println("Size of LinkedList is: " + size);
+        return size;
     }
 
     public void printList() {

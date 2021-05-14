@@ -1,5 +1,8 @@
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+@SuppressWarnings("ALL")
 
 public class LinkedListTest {
     @Test
@@ -37,7 +40,7 @@ public class LinkedListTest {
     }
 
     @Test
-    void givenNumbersWhenInsertedPassesLinkedListTest() {
+    void given1NumberWhenInsertedPassesLinkedListTest() {
         MyNode<Integer> myFirstNode = new MyNode<>(56);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(70);
@@ -74,7 +77,7 @@ public class LinkedListTest {
     }
 
     @Test
-    void givenNumberWhenPopHeadPassesLinkedListTest() {
+    void given3NumbersWhenPopHeadPassesLinkedListTest() {
         MyNode<Integer> myFirstNode = new MyNode<>(56);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(70);
@@ -92,7 +95,7 @@ public class LinkedListTest {
     }
 
     @Test
-    void givenNumberWhenPopTailPassesLinkedListTest() {
+    void given3NumbersWhenPopTailPassesLinkedListTest() {
         MyNode<Integer> myFirstNode = new MyNode<>(56);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(70);
@@ -137,6 +140,7 @@ public class LinkedListTest {
         list.remove(40);
         System.out.print("When 40 is Deleted the ");
         list.printList();
+        list.getSize();
         boolean result = list.head.equals(myFirstNode) &&
                          list.head.getNext().equals(mySecondNode) &&
                          list.tail.equals(myFourthNode);
@@ -160,6 +164,7 @@ public class LinkedListTest {
         list.remove(60);
         System.out.print("When 60 is Deleted the ");
         list.printList();
+        list.getSize();
         boolean result = list.head.equals(myFirstNode) &&
                          list.head.getNext().equals(mySecondNode) &&
                          list.tail.equals(myFifthNode);
