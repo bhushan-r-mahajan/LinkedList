@@ -32,9 +32,14 @@ public class LinkedList<K> {
         }
     }
 
+    public void insert(LNode<K> newNode, LNode<K> prevNode) {
+        LNode<K> tempNode = prevNode.getNext();
+        prevNode.setNext(newNode);
+        newNode.setNext(tempNode);
+    }
     public void printList() {
         StringBuilder viewList = new StringBuilder("Values are: ");
-        LNode tempNode = head;
+        LNode<K> tempNode = head;
         while (tempNode.getNext() != null) {
             viewList.append(tempNode.getKey());
             if (!tempNode.equals(tail)) {
