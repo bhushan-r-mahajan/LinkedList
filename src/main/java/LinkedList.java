@@ -37,6 +37,7 @@ public class LinkedList<K> {
         prevNode.setNext(newNode);
         newNode.setNext(tempNode);
     }
+
     public void printList() {
         StringBuilder viewList = new StringBuilder("Values are: ");
         LNode<K> tempNode = head;
