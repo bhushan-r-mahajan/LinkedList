@@ -38,6 +38,12 @@ public class LinkedList<K> {
         newNode.setNext(tempNode);
     }
 
+    public LNode pop() {
+        LNode tempNode = this.head;
+        this.head = head.getNext();
+        return tempNode;
+    }
+
     public void printList() {
         StringBuilder viewList = new StringBuilder("Values are: ");
         LNode<K> tempNode = head;
