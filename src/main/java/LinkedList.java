@@ -76,8 +76,8 @@ public class LinkedList<K extends Comparable<K>> {
         LNode tempNode = head;
         LNode prevNode = null;
         while (tempNode.getKey() != key) {
-                prevNode = tempNode;
-                tempNode = tempNode.getNext();
+            prevNode = tempNode;
+            tempNode = tempNode.getNext();
         }
         tempNode = tempNode.getNext();
         prevNode.setNext(tempNode);
