@@ -20,12 +20,26 @@ public class LinkedList<K> {
         }
     }
 
+    public void append(LNode<K> newNode) {
+        if (this.head == null) {
+            this.head = newNode;
+        }
+        if (this.tail == null) {
+            this.tail = newNode;
+        } else {
+            this.tail.setNext(newNode);
+            this.tail = newNode;
+        }
+    }
+
     public void printList() {
-        StringBuilder viewList = new StringBuilder("Values: ");
+        StringBuilder viewList = new StringBuilder("Values are: ");
         LNode tempNode = head;
         while (tempNode.getNext() != null) {
             viewList.append(tempNode.getKey());
-            if (!tempNode.equals(tail)) viewList.append("->");
+            if (!tempNode.equals(tail)) {
+                viewList.append("->");
+            }
             tempNode = tempNode.getNext();
         }
         viewList.append(tempNode.getKey());
