@@ -38,9 +38,19 @@ public class LinkedList<K> {
         newNode.setNext(tempNode);
     }
 
-    public LNode pop() {
-        LNode tempNode = this.head;
+    public LNode<K> popHead() {
+        LNode<K> tempNode = this.head;
         this.head = head.getNext();
+        return tempNode;
+    }
+
+    public LNode<K> popTail() {
+        LNode<K> tempNode = this.head;
+        while(!tempNode.getNext().equals(tail)) {
+            tempNode = tempNode.getNext();
+        }
+        this.tail = tempNode;
+        tempNode.setNext(null);
         return tempNode;
     }
 

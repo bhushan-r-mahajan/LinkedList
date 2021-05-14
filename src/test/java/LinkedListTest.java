@@ -54,7 +54,7 @@ public class LinkedListTest {
     }
 
     @Test
-    void givenNumberWhenPopPassesLinkedListTest() {
+    void givenNumberWhenPopHeadPassesLinkedListTest() {
         MyNode<Integer> myFirstNode = new MyNode<> (56);
         MyNode<Integer> mySecondNode = new MyNode<> (30);
         MyNode<Integer> myThirdNode = new MyNode<> (70);
@@ -62,11 +62,28 @@ public class LinkedListTest {
         list.append(myFirstNode);
         list.append(mySecondNode);
         list.append(myThirdNode);
-        list.pop();
+        list.popHead();
         System.out.print("When 56 is Deleted the ");
         list.printList();
         boolean result = list.head.equals(mySecondNode) &&
                          list.tail.equals(myThirdNode);
+        Assertions.assertTrue(result);
+    }
+
+    @Test
+    void givenNumberWhenPopTailPassesLinkedListTest() {
+        MyNode<Integer> myFirstNode = new MyNode<> (56);
+        MyNode<Integer> mySecondNode = new MyNode<> (30);
+        MyNode<Integer> myThirdNode = new MyNode<> (70);
+        LinkedList list = new LinkedList();
+        list.append(myFirstNode);
+        list.append(mySecondNode);
+        list.append(myThirdNode);
+        list.popTail();
+        System.out.print("When 70 is Deleted the ");
+        list.printList();
+        boolean result = list.head.equals(myFirstNode) &&
+                         list.tail.equals(mySecondNode);
         Assertions.assertTrue(result);
     }
 }
