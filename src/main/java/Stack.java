@@ -14,7 +14,24 @@ public class Stack<K> {
         return linkedList.head;
     }
 
+    public LNode<K> pop() {
+        return linkedList.popHead();
+    }
+
+    public void size() {
+        linkedList.getSize();
+    }
+
     public void printStack() {
         linkedList.printList();
+    }
+
+    public boolean isEmpty() {
+        if (linkedList.head != null && linkedList.tail != null) {
+            System.out.println("The Stack is Not Empty!!");
+            return false;
+        }
+        System.out.println("The Stack is Empty!!");
+        return true;
     }
 }
