@@ -5,7 +5,7 @@ public class Queue<K> {
         linkedList = new LinkedList<>();
     }
 
-    public void push(LNode value) {
+    public void enqueue(LNode value) {
         linkedList.append(value);
     }
 
@@ -20,5 +20,9 @@ public class Queue<K> {
     public LNode peek() {
         System.out.println("The Element after peeking is: " + linkedList.head.getKey());
         return linkedList.head;
+    }
+
+    public LNode<K> dequeue() {
+        return linkedList.popHead();
     }
 }
