@@ -9,7 +9,7 @@ public class Queue<K> {
         linkedList.append(value);
     }
 
-    public void printStack() {
+    public void printQueue() {
         linkedList.printList();
     }
 
@@ -24,5 +24,14 @@ public class Queue<K> {
 
     public LNode<K> dequeue() {
         return linkedList.popHead();
+    }
+
+    public boolean isEmpty() {
+        if (linkedList.head != null && linkedList.tail != null) {
+            System.out.println("The Queue is Not Empty!!");
+            return false;
+        }
+        System.out.println("The Queue is Empty!!");
+        return true;
     }
 }
