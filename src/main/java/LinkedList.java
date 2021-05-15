@@ -1,6 +1,6 @@
 @SuppressWarnings("ALL")
 
-public class LinkedList<K extends Comparable<K>> {
+public class LinkedList<K> {
     public LNode<K> head;
     public LNode<K> tail;
 
@@ -83,8 +83,7 @@ public class LinkedList<K extends Comparable<K>> {
         prevNode.setNext(tempNode);
     }
 
-    public int getSize()
-    {
+    public int getSize() {
         LNode newNode = this.head;
         int size = 0;
         while (newNode != null)
