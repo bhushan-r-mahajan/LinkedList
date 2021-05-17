@@ -61,14 +61,12 @@ public class LinkedList<K> {
 
     public LNode searchList(K key) {
         LNode tempNode = head;
-        while (tempNode != null) {
+        while (tempNode != null && tempNode.getNext() != null) {
             if (tempNode.getKey().equals(key)) {
-                System.out.println("Found Successfully in the LinkedList!!\nThe Searched Value is: " + key);
                 return tempNode;
             }
             tempNode = tempNode.getNext();
         }
-        System.out.println("Value Not Found in the LinkedList!!");
         return null;
     }
 
@@ -107,5 +105,10 @@ public class LinkedList<K> {
         }
         viewList.append(tempNode.getKey());
         System.out.println(viewList);
+    }
+
+    @Override
+    public String toString() {
+        return " " + head + " ";
     }
 }

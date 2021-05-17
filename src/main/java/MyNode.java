@@ -24,4 +24,14 @@ public class MyNode <K> implements LNode<K> {
     public LNode<K> getNext() {
         return next;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder viewList = new StringBuilder();
+        viewList.append ("Values are: [" + "Key = ").append(key).append("]");
+        if (next != null) {
+            viewList.append("->").append(next);
+        }
+        return viewList.toString();
+    }
 }
