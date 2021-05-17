@@ -40,7 +40,7 @@ public class MapNode<K, V> implements LNode<K> {
     @Override
     public String toString() {
         StringBuilder viewList = new StringBuilder();
-        viewList.append ("[" + " Key = ").append(key).append(" Value = ").append(value).append("]");
+        viewList.append (" K = ").append(key).append(" V = ").append(value);
         if (next != null) {
             viewList.append("->").append(next);
         }

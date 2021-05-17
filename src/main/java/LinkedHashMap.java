@@ -44,8 +44,26 @@ public class LinkedHashMap<K, V> {
         }
     }
 
+    public boolean delete(K key) {
+        int index = this.getContainerIndex(key);
+        LinkedList<K> linkedList = this.containers.get(index);
+        MapNode<K, V> mapNode = (MapNode<K, V>) linkedList.searchList(key);
+        System.out.println("The Searched Key is: " + key);
+        if(mapNode.getKey().equals(key)){
+            LNode<K> temp ;
+            temp = mapNode.getNext();
+            mapNode.setKey((K) temp);
+            mapNode.setNext(null);
+            System.out.println("The Searched word '" + key + "' was Deleted Successfully!!");
+            return true;
+        } else {
+            System.out.println("The Searched word '" + key + "' was Not Found!!");
+            return false;
+        }
+    }
+
     @Override
     public String toString() {
-        return "LinkedHashMap list: {" + containers + "}";
+        return "LinkedHashMap list: " + containers;
     }
 }

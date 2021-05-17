@@ -109,6 +109,6 @@ public class LinkedList<K> {
 
     @Override
     public String toString() {
-        return " " + head + " ";
+        return "" + head + "";
     }
 }

@@ -28,7 +28,7 @@ public class MyNode <K> implements LNode<K> {
     @Override
     public String toString() {
         StringBuilder viewList = new StringBuilder();
-        viewList.append ("Values are: [" + "Key = ").append(key).append("]");
+        viewList.append ("Values are: ").append(key);
         if (next != null) {
             viewList.append("->").append(next);
         }
