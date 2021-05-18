@@ -31,4 +31,24 @@ public class BinaryTree<K extends Comparable<K>> {
     private int getSize(BinaryNode<K> current) {
         return current == null ? 0 : 1 + getSize(current.left) + getSize(current.right);
     }
+
+    public boolean search(K key) {
+        System.out.println("Searching for element: " + key);
+        BinaryNode<K> current = this.root;
+        if(current == null){
+            System.out.println("Element Not Found because tree is empty!!");
+            return false;
+        }
+        while(current.key != key){
+            int result = key.compareTo(current.key);
+            if(result < 0){
+                current = current.left;
+            }
+            else {
+                current = current.right;
+            }
+        }
+        System.out.println("The Searched Element Is Found Successfully!!");
+        return true;
+    }
 }
